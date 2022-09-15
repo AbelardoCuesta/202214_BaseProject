@@ -49,4 +49,13 @@ export class SocioClubController {
   async findMembersFromClub(@Param('idClub') idClub: string) {
     return await this.socioClubService.findMembersFromClub(idClub);
   }
+
+  @Delete(':idClub/socios/:idSocio')
+  @HttpCode(204)
+  async deleteMemberFromClub(
+    @Param('idClub') idClub: string,
+    @Param('idSocio') idSocio: string,
+  ) {
+    return await this.socioClubService.deleteMemberFromClub(idClub, idSocio);
+  }
 }
