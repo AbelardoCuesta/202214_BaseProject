@@ -78,6 +78,7 @@ describe('SocioClubService', () => {
     expect(result.socios.length).toBe(1);
     expect(result.socios[0]).not.toBeNull();
     expect(result.socios[0].nombre).toBe(newSocio.nombre);
+    console.log(result.fechaFundacion);
   });
 
 });

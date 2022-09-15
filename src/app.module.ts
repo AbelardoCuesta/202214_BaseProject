@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ClubEntity } from './club/club.entity';
 import { SocioEntity } from './socio/socio.entity';
 import { SocioClubModule } from './socio-club/socio-club.module';
+import { SocioClubController } from './socio-club/socio-club.controller';
 
 @Module({
   imports: [
