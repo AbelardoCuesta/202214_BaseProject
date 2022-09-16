@@ -35,7 +35,14 @@ export class SocioService {
   }
 
   async create(socio: SocioEntity): Promise<SocioEntity> {
-    return await this.socioRepository.save(socio);
+    if (socio.correo.includes('@')) {
+      return await this.socioRepository.save(socio);
+    } else {
+      throw new BusinessLogicException(
+        'The email does not have the character @',
+        BusinessError.BAD_REQUEST,
+      );
+    }
   }
 
   async update(id: string, socio: SocioEntity): Promise<SocioEntity> {
@@ -49,8 +56,14 @@ export class SocioService {
       );
 
     socio.id = id;
-
-    return await this.socioRepository.save(socio);
+    if (socio.correo.includes('@')) {
+      return await this.socioRepository.save(socio);
+    } else {
+      throw new BusinessLogicException(
+        'The email does not have the character @',
+        BusinessError.BAD_REQUEST,
+      );
+    }
   }
 
   async delete(id: string) {

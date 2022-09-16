@@ -35,7 +35,14 @@ export class ClubService {
   }
 
   async create(club: ClubEntity): Promise<ClubEntity> {
-    return await this.clubRepository.save(club);
+    if (club.descripcion.length <= 100) {
+      return await this.clubRepository.save(club);
+    } else {
+      throw new BusinessLogicException(
+        'The description length is greater than 100',
+        BusinessError.NOT_FOUND,
+      );
+    }
   }
 
   async update(id: string, club: ClubEntity): Promise<ClubEntity> {

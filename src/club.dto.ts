@@ -1,5 +1,5 @@
 import { Type } from '@nestjs/common';
-import { IsDate, IsNotEmpty, IsString } from 'class-validator';
+import { IsDate, IsNotEmpty, IsString, IsUrl } from 'class-validator';
 
 export class ClubDto {
   readonly id: number;
@@ -10,6 +10,7 @@ export class ClubDto {
 
   @IsNotEmpty()
   @IsString()
+  @IsUrl()
   readonly imagen: string;
 
   @IsNotEmpty()
