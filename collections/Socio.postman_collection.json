@@ -1,0 +1,659 @@
+{
+	"info": {
+		"_postman_id": "01af2524-32e6-4aba-b817-d0ad828ede8b",
+		"name": "Socio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23269791"
+	},
+	"item": [
+		{
+			"name": "Crear socio valido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"socio_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nombre\": \"Alejandro Duran\",\n   \"correo\": \"@email\",\n   \"fechaNacimiento\": \"1947-04-29\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/socios",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear socio valido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nombre\": \"Alejandro Duran\",\r\n   \"correo\": \"@email\",\r\n   \"fechaNacimiento\": \"1947-04-29\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/socios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Alejandro Duran\",\n    \"correo\": \"@email\",\n    \"fechaNacimiento\": \"1947-04-29\",\n    \"id\": \"39312d20-f158-42b3-9149-aaf7becb18f1\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear socio invalido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"club_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nombre\": \"Alejandro Duran\",\n   \"correo\": \"fsdffl\",\n   \"fechaNacimiento\": \"1947-04-29\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/socios",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear socio valido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nombre\": \"Alejandro Duran\",\r\n   \"correo\": \"fsdffl\",\r\n   \"fechaNacimiento\": \"1947-04-29\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/socios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"The email does not have the character @\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todos los socios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of socios > ' + 0, function () {",
+							"    var data = pm.response.json()",
+							"    pm.expect(data.length).to.greaterThan(0)",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/socios",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todos los socios",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/socios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"5f19aaa5-1b1b-4a59-b6e4-1b2de61d0966\",\n        \"nombre\": \"Club los pollitos\",\n        \"correo\": \"@email\",\n        \"fechaNacimiento\": \"1947-04-29T05:00:00.000Z\",\n        \"clubes\": []\n    },\n    {\n        \"id\": \"39312d20-f158-42b3-9149-aaf7becb18f1\",\n        \"nombre\": \"Alejandro Duran\",\n        \"correo\": \"@email\",\n        \"fechaNacimiento\": \"1947-04-29T05:00:00.000Z\",\n        \"clubes\": []\n    },\n    {\n        \"id\": \"5f1e9e84-0b36-4aaf-8261-0a69f3b3f74a\",\n        \"nombre\": \"Club los pollitos\",\n        \"correo\": \"ejemplo@email\",\n        \"fechaNacimiento\": \"1947-04-29T05:00:00.000Z\",\n        \"clubes\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener un socio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/socios/{{socio_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios",
+						"{{socio_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un socio",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/socios/{{socio_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios",
+								"{{socio_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"id\": \"39312d20-f158-42b3-9149-aaf7becb18f1\",\n    \"nombre\": \"Alejandro Duran\",\n    \"correo\": \"@email\",\n    \"fechaNacimiento\": \"1947-04-29T05:00:00.000Z\",\n    \"clubes\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un socio invalido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The associate with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un socio invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The associate with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar socio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nombre\": \"Club los papetos\",\n   \"descripcion\": \"El wasabi (山葵 o ワサビ?) es una especia o  picante de la cocina japonesa, que se usa a menud\",\n   \"imagen\":\"www.google.com\",\n   \"fechaFundacion\": \"1947-04-25\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/socios/{{socio_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios",
+						"{{socio_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar socio",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nombre\": \"Diomedez Diaz\",\r\n   \"correo\": \"fd@email\",\r\n   \"fechaNacimiento\": \"1947-04-29\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/socios/{{socio_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios",
+								"{{socio_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n   \"nombre\": \"Diomedez Diaz\",\n   \"correo\": \"fd@email\",\n   \"fechaNacimiento\": \"1947-04-29\"  \n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un socio invalido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The associate with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nombre\": \"Diomedez Diaz\",\n   \"correo\": \"fd@email\",\n   \"fechaNacimiento\": \"1947-04-29\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar un socio invalido",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nombre\": \"Diomedez Diaz\",\r\n   \"correo\": \"fd@email\",\r\n   \"fechaNacimiento\": \"1947-04-29\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The associate with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar socio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/socios/{{socio_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios",
+						"{{socio_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar socio",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/socios/{{socio_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios",
+								"{{socio_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Eliminar un socio invalido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The product with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socios",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar socio invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"socios",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The associate with the given id was not found\"\r\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "<Basic Auth Username>",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "<Basic Auth Password>",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": " http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}
