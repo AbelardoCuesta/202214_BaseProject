@@ -25,15 +25,15 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios",
-						"{{socio_id}}"
+						"members",
+						"{{member_id}}"
 					]
 				}
 			},
@@ -49,15 +49,15 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios",
-								"{{socio_id}}"
+								"members",
+								"{{member_id}}"
 							]
 						}
 					},
@@ -89,14 +89,14 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/cff1a746-86dc-4b29-8f4a-b0e8be64fda7",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/cff1a746-86dc-4b29-8f4a-b0e8be64fda7",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios",
+						"members",
 						"cff1a746-86dc-4b29-8f4a-b0e8be64fda7"
 					]
 				}
@@ -113,14 +113,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/cff1a746-86dc-4b29-8f4a-b0e8be64fda7",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/cff1a746-86dc-4b29-8f4a-b0e8be64fda7",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios",
+								"members",
 								"cff1a746-86dc-4b29-8f4a-b0e8be64fda7"
 							]
 						}
@@ -153,14 +153,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios"
+						"members"
 					]
 				}
 			},
@@ -171,14 +171,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios"
+								"members"
 							]
 						}
 					},
@@ -210,15 +210,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios",
-						"{{socio_id}}"
+						"members",
+						"{{member_id}}"
 					]
 				}
 			},
@@ -229,15 +229,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios",
-								"{{socio_id}}"
+								"members",
+								"{{member_id}}"
 							]
 						}
 					},
@@ -274,15 +274,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id2}}",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id2}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios",
-						"{{socio_id2}}"
+						"members",
+						"{{member_id2}}"
 					]
 				}
 			},
@@ -293,15 +293,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id2}}",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id2}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios",
-								"{{socio_id2}}"
+								"members",
+								"{{member_id2}}"
 							]
 						}
 					},
@@ -342,14 +342,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios"
+						"members"
 					]
 				}
 			},
@@ -366,7 +366,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n    {\r\n        \"id\": \"{{socio_id2}}\"\r\n    }\r\n]",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{member_id2}}\"\r\n    }\r\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -374,14 +374,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios"
+								"members"
 							]
 						}
 					},
@@ -422,14 +422,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios"
+						"members"
 					]
 				}
 			},
@@ -454,14 +454,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios"
+								"members"
 							]
 						}
 					},
@@ -493,15 +493,15 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios",
-						"{{socio_id}}"
+						"members",
+						"{{member_id}}"
 					]
 				}
 			},
@@ -512,15 +512,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios",
-								"{{socio_id}}"
+								"members",
+								"{{member_id}}"
 							]
 						}
 					},
@@ -552,15 +552,15 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id2}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"clubs",
 						"{{club_id}}",
-						"socios",
-						"{{socio_id}}"
+						"members",
+						"{{member_id2}}"
 					]
 				}
 			},
@@ -571,15 +571,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/clubs/{{club_id}}/socios/{{socio_id}}",
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id2}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"clubs",
 								"{{club_id}}",
-								"socios",
-								"{{socio_id}}"
+								"members",
+								"{{member_id2}}"
 							]
 						}
 					},

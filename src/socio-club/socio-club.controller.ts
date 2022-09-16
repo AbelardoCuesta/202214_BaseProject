@@ -20,7 +20,7 @@ import { SocioClubService } from './socio-club.service';
 export class SocioClubController {
   constructor(private readonly socioClubService: SocioClubService) {}
 
-  @Post(':idClub/socios/:idSocio')
+  @Post(':idClub/members/:idMember')
   async addMemberToClub(
     @Param('idClub') idClub: string,
     @Param('idSocio') idSocio: string,
@@ -28,7 +28,7 @@ export class SocioClubController {
     return await this.socioClubService.addMemberToClub(idClub, idSocio);
   }
 
-  @Put(':idClub/socios')
+  @Put(':idClub/members')
   async associateSocioClub(
     @Body() socioDto: SocioDto[],
     @Param('idClub') idClub: string,
@@ -37,7 +37,7 @@ export class SocioClubController {
     return await this.socioClubService.updateMembersFromClub(idClub, socios);
   }
 
-  @Get(':idClub/socios/:idSocio')
+  @Get(':idClub/members/:idMembers')
   async findMemberFromClub(
     @Param('idClub') idClub: string,
     @Param('idSocio') idSocio: string,
@@ -45,12 +45,12 @@ export class SocioClubController {
     return await this.socioClubService.findMemberFromClub(idClub, idSocio);
   }
 
-  @Get(':idClub/socios')
+  @Get(':idClub/members')
   async findMembersFromClub(@Param('idClub') idClub: string) {
     return await this.socioClubService.findMembersFromClub(idClub);
   }
 
-  @Delete(':idClub/socios/:idSocio')
+  @Delete(':idClub/members/:idMember')
   @HttpCode(204)
   async deleteMemberFromClub(
     @Param('idClub') idClub: string,

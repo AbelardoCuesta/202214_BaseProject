@@ -14,7 +14,7 @@
 					"script": {
 						"exec": [
 							"var data = pm.response.json()",
-							"pm.globals.set(\"socio_id\", data.id);",
+							"pm.globals.set(\"member_id\", data.id);",
 							"",
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -37,12 +37,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/socios",
+					"raw": "{{baseUrl}}/members",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios"
+						"members"
 					]
 				}
 			},
@@ -67,12 +67,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/socios",
+							"raw": "{{baseUrl}}/members",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios"
+								"members"
 							]
 						}
 					},
@@ -93,7 +93,7 @@
 					"script": {
 						"exec": [
 							"var data = pm.response.json()",
-							"pm.globals.set(\"club_id\", data.id);",
+							"pm.globals.set(\"member_id\", data.id);",
 							"",
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -116,12 +116,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/socios",
+					"raw": "{{baseUrl}}/members",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios"
+						"members"
 					]
 				}
 			},
@@ -146,12 +146,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/socios",
+							"raw": "{{baseUrl}}/members",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios"
+								"members"
 							]
 						}
 					},
@@ -188,12 +188,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/socios",
+					"raw": "{{baseUrl}}/members",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios"
+						"members"
 					]
 				}
 			},
@@ -204,12 +204,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/socios",
+							"raw": "{{baseUrl}}/members",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios"
+								"members"
 							]
 						}
 					},
@@ -241,13 +241,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/socios/{{socio_id}}",
+					"raw": "{{baseUrl}}/members/{{member_id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios",
-						"{{socio_id}}"
+						"members",
+						"{{member_id}}"
 					]
 				}
 			},
@@ -258,13 +258,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/socios/{{socio_id}}",
+							"raw": "{{baseUrl}}/members/{{member_id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios",
-								"{{socio_id}}"
+								"members",
+								"{{member_id}}"
 							]
 						}
 					},
@@ -301,12 +301,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+					"raw": "{{baseUrl}}/members/00000000-0000-0000-0000-000000000000",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios",
+						"members",
 						"00000000-0000-0000-0000-000000000000"
 					]
 				}
@@ -318,12 +318,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+							"raw": "{{baseUrl}}/members/00000000-0000-0000-0000-000000000000",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios",
+								"members",
 								"00000000-0000-0000-0000-000000000000"
 							]
 						}
@@ -357,7 +357,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n   \"nombre\": \"Club los papetos\",\n   \"descripcion\": \"El wasabi (山葵 o ワサビ?) es una especia o  picante de la cocina japonesa, que se usa a menud\",\n   \"imagen\":\"www.google.com\",\n   \"fechaFundacion\": \"1947-04-25\"  \n}",
+					"raw": "{\n   \"nombre\": \"Diomedez Diaz\",\n   \"correo\": \"fd@email\",\n   \"fechaNacimiento\": \"1947-04-29\"  \n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -365,13 +365,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/socios/{{socio_id}}",
+					"raw": "{{baseUrl}}/members/{{member_id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios",
-						"{{socio_id}}"
+						"members",
+						"{{member_id}}"
 					]
 				}
 			},
@@ -396,13 +396,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/socios/{{socio_id}}",
+							"raw": "{{baseUrl}}/members/{{member_id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios",
-								"{{socio_id}}"
+								"members",
+								"{{member_id}}"
 							]
 						}
 					},
@@ -448,12 +448,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+					"raw": "{{baseUrl}}/members/00000000-0000-0000-0000-000000000000",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios",
+						"members",
 						"00000000-0000-0000-0000-000000000000"
 					]
 				}
@@ -479,12 +479,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+							"raw": "{{baseUrl}}/members/00000000-0000-0000-0000-000000000000",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios",
+								"members",
 								"00000000-0000-0000-0000-000000000000"
 							]
 						}
@@ -517,13 +517,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/socios/{{socio_id}}",
+					"raw": "{{baseUrl}}/members/{{member_id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios",
-						"{{socio_id}}"
+						"members",
+						"{{member_id}}"
 					]
 				}
 			},
@@ -534,13 +534,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/socios/{{socio_id}}",
+							"raw": "{{baseUrl}}/members/{{member_id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios",
-								"{{socio_id}}"
+								"members",
+								"{{member_id}}"
 							]
 						}
 					},
@@ -577,12 +577,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+					"raw": "{{baseUrl}}/members/00000000-0000-0000-0000-000000000000",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"socios",
+						"members",
 						"00000000-0000-0000-0000-000000000000"
 					]
 				}
@@ -594,12 +594,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/socios/00000000-0000-0000-0000-000000000000",
+							"raw": "{{baseUrl}}/members/00000000-0000-0000-0000-000000000000",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"socios",
+								"members",
 								"00000000-0000-0000-0000-000000000000"
 							]
 						}
